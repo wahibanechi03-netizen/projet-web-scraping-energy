@@ -1,0 +1,25 @@
+# Gros fichiers de données - NE PAS METTRE SUR GITHUB
+data/Adelaide_Data.csv
+data/Perth_Data.csv
+data/Sydney_Data.csv
+data/Tasmania_Data.csv
+data/meteo_simule.csv
+data/resume_fichiers.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environnements
+venv/
+env/
+.vscode/
+.idea/
+
+# Système
+.DS_Store
+Thumbs.db
+*.log
