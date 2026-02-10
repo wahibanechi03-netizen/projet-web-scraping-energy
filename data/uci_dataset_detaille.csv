@@ -1,0 +1,2 @@
+dataset_nom,dataset_url,dataset_id,description,date_publication,nombre_instances,nombre_attributs,type_attributs,zone,tache,nombre_fichiers,fichiers_exemple,date_scraping,statut_scraping
+Wave Energy Converters,https://archive.ics.uci.edu/dataset/494/wave+energy+converters,494,,N/A,N/A,N/A,N/A,N/A,N/A,0,,2026-02-10 10:27:14,Succès

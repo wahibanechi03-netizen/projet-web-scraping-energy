@@ -1,10 +1,29 @@
-# GROS FICHIERS - NE PAS METTRE SUR GITHUB
+# Gros fichiers - NE PAS METTRE SUR GITHUB
 data/Adelaide_Data.csv
 data/Perth_Data.csv
 data/Sydney_Data.csv
 data/Tasmania_Data.csv
 
-# SAUF les petits fichiers
-!data/uci_dataset_scrape.csv
-!data/metadata.csv
-!data/resume_fichiers.csv
+# SAUF les petits fichiers:
+!data/meteo_reel.csv
+!data/previsions_meteo.csv
+!data/uci_dataset_detaille.csv
+!data/analyse_datasets.csv
+!data/metadata.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environnements
+venv/
+env/
+.vscode/
+.idea/
+
+# Système
+.DS_Store
+Thumbs.db
+*.log

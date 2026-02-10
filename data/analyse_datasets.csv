@@ -1,0 +1,5 @@
+dataset,fichier,lignes_total,lignes_analysees,colonnes,colonnes_numeriques,colonnes_categorielles,valeurs_manquantes,duplicatas,exemple_colonnes,taille_mb,date_analyse
+Adelaide,Adelaide_Data.csv,>1000,1000,49,49,0,0,0,"316.5855, 223.9277, 182.3434...",31.1,2026-02-10 10:27:14
+Perth,Perth_Data.csv,>1000,1000,49,49,0,0,0,"427.0737, 155.1636, 476.0661...",31.02,2026-02-10 10:27:14
+Sydney,Sydney_Data.csv,>1000,1000,49,49,0,0,0,"127.9439, 264.9656, 68.3481...",29.89,2026-02-10 10:27:14
+Tasmania,Tasmania_Data.csv,>1000,1000,49,49,0,0,0,"546.1931, 194.5337, 160.084...",31.77,2026-02-10 10:27:14

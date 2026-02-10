@@ -1,0 +1,29 @@
+{
+  "projet": "Web Scraping - Énergie des Vagues et Éolienne",
+  "equipe": [
+    "Mariem Abida",
+    "Mariem Werhani",
+    "Sourour Ben Salha",
+    "Hedyl Ben Taher"
+  ],
+  "date_execution": "2026-02-10 10:27:14",
+  "sources": {
+    "uci_dataset": "https://archive.ics.uci.edu/dataset/494/wave+energy+converters",
+    "meteo_api": "https://openweathermap.org/api",
+    "windfinder_coords": "49.4967°N, 9.4922°E"
+  },
+  "fichiers_generes": [
+    "data/uci_dataset_detaille.csv",
+    "data/meteo_reel.csv",
+    "data/previsions_meteo.csv",
+    "data/analyse_datasets.csv"
+  ],
+  "fichiers_source": [
+    "data/Adelaide_Data.csv",
+    "data/Perth_Data.csv",
+    "data/Sydney_Data.csv",
+    "data/Tasmania_Data.csv"
+  ],
+  "statistiques": {
+    "total_datasets": 4,
+    "total_lignes_analysees": 

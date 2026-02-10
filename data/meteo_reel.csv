@@ -1,0 +1,2 @@
+ville,pays,latitude,longitude,temperature_c,ressenti_c,temp_min,temp_max,pression_hpa,humidite_pourcent,vent_vitesse_ms,vent_vitesse_kmh,vent_direction_deg,conditions,conditions_code,nuage_pourcent,visibilite_metres,lever_soleil,coucher_soleil,date_heure_api,date_scraping,source,note
+Sindolsheim,DE,49.4967,9.4922,0.78,-1.24,0.78,0.78,1000,89,1.76,6.34,209,couvert,Clouds,93,10000,07:40:41,17:31:58,2026-02-10 10:27:14,2026-02-10 10:27:14,OpenWeatherMap API,Remplacement de Windfinder (JavaScript) par API réelle
