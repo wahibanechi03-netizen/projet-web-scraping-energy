@@ -26,4 +26,4 @@ env/
 # Système
 .DS_Store
 Thumbs.db
-*.log
+*.logdata/processed/
