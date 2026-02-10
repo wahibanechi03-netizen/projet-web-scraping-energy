@@ -1,0 +1,11 @@
+colonne,type,valeurs_uniques
+ville,Nominal (OneHotEncoder),1
+pays,Nominal (OneHotEncoder),1
+conditions,Nominal (OneHotEncoder),1
+conditions_code,Nominal (OneHotEncoder),1
+lever_soleil,Nominal (recommandé: OneHotEncoder),1
+coucher_soleil,Nominal (recommandé: OneHotEncoder),1
+date_heure_api,Nominal (recommandé: OneHotEncoder),1
+date_scraping,Nominal (recommandé: OneHotEncoder),1
+source,Nominal (OneHotEncoder),1
+note,Nominal (recommandé: OneHotEncoder),1

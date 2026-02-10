@@ -1,0 +1,50 @@
+======================================================================
+RAPPORT EDA COMPLET - PROJET ÉNERGIE
+======================================================================
+
+Date: 2026-02-10 10:51:39
+Équipe: Mariem Abida, Mariem Werhani, Sourour Ben Salha, Hedyl Ben Taher
+
+DATASETS ANALYSÉS:
+----------------------------------------
+• Météo réelle: 1 lignes × 23 colonnes
+• Prévisions météo: 40 lignes × 6 colonnes
+• UCI Dataset: 1 lignes × 14 colonnes
+• Adelaide (échantillon): 5000 lignes × 49 colonnes
+
+PREPROCESSING APPLIQUÉ:
+----------------------------------------
+• standard_scaler: ✅ Appliqué sur variables numériques
+• label_encoder: ✅ Testé sur variables catégorielles ordinales
+• onehot_encoder: ✅ Recommandé pour variables catégorielles nominales
+• feature_engineering: ✅ Ratios et interactions créés
+
+INSIGHTS PRINCIPAUX:
+----------------------------------------
+• Total variables analysées: 92
+• Variables numériques: 76
+• Variables catégorielles: 16
+
+RECOMMANDATIONS POUR MACHINE LEARNING:
+----------------------------------------
+1. Utiliser StandardScaler pour toutes les variables numériques
+2. Encoder les variables catégorielles avec OneHotEncoder (nominal) ou LabelEncoder (ordinal)
+3. Considérer la suppression ou transformation des outliers détectés
+4. Utiliser les nouvelles features créées (ratios, interactions)
+5. Modèles suggérés: Random Forest, XGBoost, Regression, Time Series
+
+FICHIERS GÉNÉRÉS:
+----------------------------------------
+• data/processed/analyse_types_variables.csv
+• data/processed/adelaide_numerique_scaled.csv
+• data/processed/recommandations_encodage.csv
+• data/processed/adelaide_features_engineered.csv
+• data/processed/fortes_correlations.csv
+• data/processed/detection_outliers.csv
+• data/visualisations/standard_scaler_comparison.png
+• data/visualisations/matrice_correlation.png
+• data/visualisations/boxplots_outliers.png
+
+======================================================================
+✅ EDA TERMINÉ AVEC SUCCÈS - PRÊT POUR MODÉLISATION ML
+======================================================================

@@ -27,3 +27,17 @@ env/
 .DS_Store
 Thumbs.db
 *.logdata/processed/
+
+# Gros fichiers processed - NE PAS mettre sur GitHub
+data/processed/adelaide_numerique_scaled.csv
+data/processed/adelaide_features_engineered.csv
+
+# SAUF les petits fichiers CSV (ceux-ci IRONT sur GitHub):
+!data/processed/analyse_types_variables.csv
+!data/processed/recommandations_encodage.csv
+!data/processed/fortes_correlations.csv
+!data/processed/detection_outliers.csv
+
+# Gardez les visualisations et rapports
+!data/visualisations/
+!data/reports/
