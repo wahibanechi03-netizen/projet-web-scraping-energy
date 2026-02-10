@@ -1,0 +1,6 @@
+localisation,temperature_c,ressenti_c,vent_vitesse_kmh,vent_direction,pression_hpa,humidite_pourcent,conditions,date_heure,source,note
+"49.4967°N, 9.4922°E",8.1,6.4,21.2,W,986,71,Ciel dégagé,2026-02-10 08:30:55,Données simulées (Windfinder - JavaScript),Site inaccessible via BeautifulSoup seul
+"49.4967°N, 9.4922°E",-3.2,-6.2,38.1,SW,1023,75,Nuageux,2026-02-10 08:30:55,Données simulées (Windfinder - JavaScript),Site inaccessible via BeautifulSoup seul
+"49.4967°N, 9.4922°E",9.9,8.3,18.1,SW,1015,77,Ciel dégagé,2026-02-10 08:30:56,Données simulées (Windfinder - JavaScript),Site inaccessible via BeautifulSoup seul
+"49.4967°N, 9.4922°E",2.1,0.3,36.7,W,1029,61,Nuageux,2026-02-10 08:30:56,Données simulées (Windfinder - JavaScript),Site inaccessible via BeautifulSoup seul
+"49.4967°N, 9.4922°E",-2.4,-4.4,37.6,NE,1001,70,Brouillard,2026-02-10 08:30:56,Données simulées (Windfinder - JavaScript),Site inaccessible via BeautifulSoup seul
