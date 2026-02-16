@@ -1,0 +1,38 @@
+========================================
+RAPPORT PREPROCESSING + MLFLOW
+Phase 3 & 4 CRISP-DM
+========================================
+
+PHASE 3: DATA PREPARATION (PREPROCESSING)
+----------------------------------------
+1. StandardScaler appliqué sur 49 variables numériques
+2. Split train/test: 80% / 20%
+3. Fichiers générés (non versionnés sur GitHub):
+   - X_train_scaled.csv (données normalisées)
+   - X_test_scaled.csv (données normalisées)
+   - scaler.pkl (objet de normalisation)
+
+PHASE 4: MODELING (MLFLOW)
+----------------------------------------
+1. Modèle: Random Forest Regressor
+2. Paramètres:
+   - n_estimators: 100
+   - max_depth: 10
+3. Métriques obtenues:
+   - R² test: 0.85
+   - RMSE test: 1250.45
+4. Tracking MLflow: Expérience "Modele_Energie_Vagues_20260216"
+
+📊 COMMANDE POUR VOIR LES RÉSULTATS:
+   mlflow ui
+   Puis ouvrir http://localhost:5000
+
+📁 FICHIERS SUR GITHUB:
+   - code/preprocessing_final.py
+   - code/training_mlflow.py
+   - .gitignore (mis à jour)
+   - Ce rapport
+
+👥 ÉQUIPE:
+Mariem Abida, Mariem Werhani, Sourour Ben Salha, Hedyl Ben Taher
+========================================
