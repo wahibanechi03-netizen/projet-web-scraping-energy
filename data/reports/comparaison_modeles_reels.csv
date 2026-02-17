@@ -1,0 +1,9 @@
+Modèle,Train R²,Test R²,Train RMSE,Test RMSE
+LinearRegression,1.0,1.0,0.0,0.0
+Ridge,1.0,1.0,7.29,7.33
+Lasso,1.0,1.0,0.76,0.77
+GradientBoosting,0.9552,0.8496,6949.76,12758.2
+XGBoost,0.9535,0.8427,7082.15,13047.08
+RandomForest,0.6923,0.5338,18217.26,22459.72
+DecisionTree,0.5687,0.2215,21567.53,29021.61
+SVR,-0.0007,-0.0111,32851.88,33075.4
