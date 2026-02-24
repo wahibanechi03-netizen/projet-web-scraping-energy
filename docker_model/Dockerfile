@@ -1,18 +1,19 @@
-# Dockerfile modifié
-FROM python:3.9-slim
+# Dockerfile pour FastAPI avec modèle GradientBoosting
+FROM python:3.10-slim
 
 WORKDIR /app
 
-# Copier les fichiers depuis leur emplacement réel
-COPY preprocessing_final.py .
-COPY training_multiple_models_corrige.py .
-COPY best_model_reel.pkl .
-COPY scaler_reel.pkl .
+# Copier les fichiers nécessaires
 COPY requirements.txt .
-COPY predict_api.py . 
+COPY main.py .
+COPY gradient_boosting_best.pkl .
+COPY scaler_gb.pkl .
 
+# Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install mlflow pandas numpy scikit-learn xgboost joblib
 
-EXPOSE 5000
-CMD ["python", "predict_api.py"]
+# Exposer le port
+EXPOSE 8000
+
+# Commande pour lancer l'API
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

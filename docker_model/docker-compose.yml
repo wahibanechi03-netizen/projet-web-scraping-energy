@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  fastapi-app:
+    build: .
+    container_name: fastapi-energie
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    environment:
+      - MODEL_PATH=/app/gradient_boosting_best.pkl
+      - SCALER_PATH=/app/scaler_gb.pkl
+    restart: unless-stopped
+    networks:
+      - energie-network
+
+networks:
+  energie-network:
+    driver: bridge
