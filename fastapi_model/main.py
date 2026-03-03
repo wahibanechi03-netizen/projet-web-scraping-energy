@@ -6,6 +6,7 @@ API FastAPI avec 3 endpoints:
 """
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import joblib
 import numpy as np
@@ -13,6 +14,7 @@ import pandas as pd
 from typing import List, Optional
 import uvicorn
 import os
+
 
 # ==================== INITIALISATION FASTAPI ====================
 app = FastAPI(
@@ -23,37 +25,87 @@ app = FastAPI(
     redoc_url="/redoc"  # Alternative documentation
 )
 
+# Configuration CORS pour permettre au frontend React de communiquer
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 print("=" * 60)
 print("DÉMARRAGE DE L'API FASTAPI")
 print("=" * 60)
 
 # ==================== CHARGEMENT DU MODÈLE ====================
-print("\n🔄 Chargement du modèle...")
+print("\n" + "=" * 60)
+print("CHARGEMENT DU MODÈLE")
+print("=" * 60)
+
 try:
-    # Chemins des modèles
-    model_path = '../data/processed/gradient_boosting_best.pkl'
-    scaler_path = '../data/processed/scaler_gb.pkl'
+    global model, scaler, FEATURES_COUNT
+    import os
+    import joblib
+    import numpy as np
     
-    # Vérifier si les fichiers existent
-    if not os.path.exists(model_path):
-        print(f"❌ Modèle non trouvé: {model_path}")
-        print("Utilisation du modèle de secours...")
+    print(f"📁 Dossier courant: {os.getcwd()}")
+    
+    # Lister tous les fichiers .pkl
+    print("\n📁 Fichiers .pkl dans le dossier:")
+    pkl_files = [f for f in os.listdir('.') if f.endswith('.pkl')]
+    for f in pkl_files:
+        size = os.path.getsize(f) / 1024
+        print(f"   - {f} ({size:.1f} KB)")
+    
+    # Charger le modèle
+    model_path = 'gradient_boosting_best.pkl'
+    scaler_path = 'scaler_gb.pkl'
+    
+    print(f"\n🔍 Chargement du modèle: {model_path}")
+    if os.path.exists(model_path):
+        model = joblib.load(model_path)
+        print(f"✅ Modèle chargé: {type(model).__name__}")
+        print(f"✅ Modèle parameters: {model.get_params() if hasattr(model, 'get_params') else 'N/A'}")
+    else:
+        print(f"❌ Fichier modèle introuvable: {model_path}")
         model = None
+    
+    print(f"\n🔍 Chargement du scaler: {scaler_path}")
+    if os.path.exists(scaler_path):
+        scaler = joblib.load(scaler_path)
+        print(f"✅ Scaler chargé: {type(scaler).__name__}")
+        FEATURES_COUNT = scaler.mean_.shape[0] if hasattr(scaler, 'mean_') else 48
+        print(f"✅ Features attendues: {FEATURES_COUNT}")
+    else:
+        print(f"❌ Fichier scaler introuvable: {scaler_path}")
         scaler = None
         FEATURES_COUNT = 48
-    else:
-        model = joblib.load(model_path)
-        scaler = joblib.load(scaler_path)
-        FEATURES_COUNT = scaler.mean_.shape[0] if scaler else 48
-        print(f"✅ Modèle chargé: {type(model).__name__}")
-        print(f"✅ Features attendues: {FEATURES_COUNT}")
+    
+    if model is None or scaler is None:
+        print("\n⚠️  MODE DÉGRADÉ - Utilisation de valeurs par défaut")
         
 except Exception as e:
-    print(f"❌ Erreur chargement: {e}")
+    print(f"\n❌ ERREUR CRITIQUE: {e}")
     model = None
     scaler = None
     FEATURES_COUNT = 48
 
+print("\n" + "=" * 60)
+
+# ==================== VÉRIFICATION GLOBALE ====================
+print("\n" + "=" * 60)
+print("VÉRIFICATION FINALE")
+print("=" * 60)
+print(f"Variable 'model' existe: {'model' in locals()}")
+print(f"Variable 'scaler' existe: {'scaler' in locals()}")
+print(f"model is None: {model is None}")
+print(f"scaler is None: {scaler is None}")
+if 'model' in locals() and model is not None:
+    print(f"Type model: {type(model).__name__}")
+if 'scaler' in locals() and scaler is not None:
+    print(f"Type scaler: {type(scaler).__name__}")
+print("=" * 60)
 # ==================== MODÈLES DE DONNÉES ====================
 class PredictionInput(BaseModel):
     """Entrée pour une prédiction"""

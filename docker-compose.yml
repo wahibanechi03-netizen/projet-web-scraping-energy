@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Backend FastAPI (votre fastapi_model)
+  fastapi_model:
+    build: ./fastapi_model
+    container_name: fastapi-model-container
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fastapi_model:/app
+    environment:
+      - MODEL_PATH=/app/gradient_boosting_best.pkl
+      - SCALER_PATH=/app/scaler_gb.pkl
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - energy-network
+
+  # Frontend React
+  frontend:
+    build: ./frontend
+    container_name: frontend-container
+    ports:
+      - "5173:80"
+    depends_on:
+      - fastapi_model
+    networks:
+      - energy-network
+    restart: unless-stopped
+
+networks:
+  energy-network:
+    driver: bridge
